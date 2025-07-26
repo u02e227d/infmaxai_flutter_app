@@ -1,5 +1,5 @@
 workflows:
-  build_ios:
+  build-ios:
     name: Build for iOS
     max_build_duration: 60
     environment:
