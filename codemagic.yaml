@@ -4,7 +4,7 @@ workflows:
     environment:
       vars:
         CERTIFICATE_PASSWORD: XuanRun801030
-    certificates:
+  certificates:
       - certificate: Encrypted(-----BEGIN CERTIFICATE-----
             MIIMzgIBAzCCDJUGCSqGSIb3DQEHAaCCDIYEggyCMIIMfjCCBs8GCSqGSIb3DQEH
             BqCCBsAwgga8AgEAMIIGtQYJKoZIhvcNAQcBMBwGCiqGSIb3DQEMAQYwDgQIhWK0
@@ -77,7 +77,7 @@ workflows:
             XkXdgDkECDvNNnyyj5LYAgEB
             -----END CERTIFICATE-----)
         password: Encrypted(XuanRun801030)
-    provisioning_profiles:
+  provisioning_profiles:
         - Encrypted(-----BEGIN CERTIFICATE-----
             MII0GgYJKoZIhvcNAQcCoII0CzCCNAcCAQExCzAJBgUrDgMCGgUAMIIkJwYJKoZI
             hvcNAQcBoIIkGASCJBQ8P3htbCB2ZXJzaW9uPSIxLjAiIGVuY29kaW5nPSJVVEYt
@@ -353,9 +353,9 @@ workflows:
             WmmSHdk1qSbJhhazH+cvt3nON98vYh65tx3JPtgqpHv25DzDD0mLIrV0pYhLUQb2
             nVtOQC5kpuBTmW4o2FvfJEFfXLB3nk520g2QAIhYKzfgiiVnhVBsI5AczKAP1g==
             -----END CERTIFICATE-----)
-    scripts:
+  scripts:
       - name: Build iOS
         script: |
           flutter build ipa --release
-    artifacts:
+  artifacts:
       - build/ios/ipa/*.ipa
