@@ -3,7 +3,7 @@ workflows:
     name: iOS Build
     environment:
       vars:
-        CERTIFICATE_PASSWORD: your_password
+        CERTIFICATE_PASSWORD: XuanRun801030
       certificates:
         - certificate: Encrypted(-----BEGIN CERTIFICATE-----
             MIIMzgIBAzCCDJUGCSqGSIb3DQEHAaCCDIYEggyCMIIMfjCCBs8GCSqGSIb3DQEH
