@@ -354,8 +354,8 @@ workflows:
             nVtOQC5kpuBTmW4o2FvfJEFfXLB3nk520g2QAIhYKzfgiiVnhVBsI5AczKAP1g==
             -----END CERTIFICATE-----)
   scripts:
-      - name: Build iOS
-        script: |
-          flutter build ipa --release
+      build: |
+        flutter build ipa --release
+
   artifacts:
       - build/ios/ipa/*.ipa
