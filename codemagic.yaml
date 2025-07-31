@@ -358,4 +358,4 @@ workflows:
         flutter build ipa --release
 
   artifacts:
-      - build/ios/ipa/*.ipa
+    ipa_file: build/ios/ipa/*.ipa
