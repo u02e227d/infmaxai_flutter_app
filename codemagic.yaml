@@ -5,7 +5,7 @@ workflows:
       vars:
         CERTIFICATE_PASSWORD: XuanRun801030
   certificates:
-    certificate:
+    distribution:
     encrypted: |
       -----BEGIN CERTIFICATE-----
             MIIMzgIBAzCCDJUGCSqGSIb3DQEHAaCCDIYEggyCMIIMfjCCBs8GCSqGSIb3DQEH
@@ -78,7 +78,7 @@ workflows:
             SvSw1WIOpzIGsifKusTZ+zAwMCEwCQYFKw4DAhoFAAQUyW2bApozYqNGUZYz2q7b
             XkXdgDkECDvNNnyyj5LYAgEB
             -----END CERTIFICATE-----
-    password: CERTIFICATE_XuanRun801030
+    password: CERTIFICATE_PASSWORD
   provisioning_profiles:
     profile:  Encrypted(-----BEGIN CERTIFICATE-----
             MII0GgYJKoZIhvcNAQcCoII0CzCCNAcCAQExCzAJBgUrDgMCGgUAMIIkJwYJKoZI
