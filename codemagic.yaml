@@ -78,7 +78,7 @@ workflows:
             -----END CERTIFICATE-----)
     password: Encrypted(XuanRun801030)
   provisioning_profiles:
-        - Encrypted(-----BEGIN CERTIFICATE-----
+    profile:  Encrypted(-----BEGIN CERTIFICATE-----
             MII0GgYJKoZIhvcNAQcCoII0CzCCNAcCAQExCzAJBgUrDgMCGgUAMIIkJwYJKoZI
             hvcNAQcBoIIkGASCJBQ8P3htbCB2ZXJzaW9uPSIxLjAiIGVuY29kaW5nPSJVVEYt
             OCI/Pgo8IURPQ1RZUEUgcGxpc3QgUFVCTElDICItLy9BcHBsZS8vRFREIFBMSVNU
