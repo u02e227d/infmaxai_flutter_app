@@ -4,7 +4,6 @@ workflows:
     environment:
       groups:
         - ios_signing
-
     scripts:
       - name: Get dependencies
         script: |
@@ -15,5 +14,6 @@ workflows:
           flutter build ios --release --no-codesign
 
     artifacts:
-      - build/ios/ipa/*.ipa
-      - build/ios/ipa/*.dSYM.zip
+      paths:
+        - build/ios/ipa/*.ipa
+        - build/ios/ipa/*.dSYM.zip
