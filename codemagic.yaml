@@ -4,10 +4,10 @@ workflows:
     environment:
       vars:
         CERTIFICATE_PASSWORD: XuanRun801030
-  certificates:
-    distribution:
-    encrypted: |
-      -----BEGIN CERTIFICATE-----
+    certificates:
+      distribution:
+        encrypted: |
+          -----BEGIN CERTIFICATE-----
             MIIMzgIBAzCCDJUGCSqGSIb3DQEHAaCCDIYEggyCMIIMfjCCBs8GCSqGSIb3DQEH
             BqCCBsAwgga8AgEAMIIGtQYJKoZIhvcNAQcBMBwGCiqGSIb3DQEMAQYwDgQIhWK0
             SdISIHcCAggAgIIGiObYRlxvyvo1fd+lPMt9+Lt9VKbou8ZAjTsqrP302YVVYtJN
