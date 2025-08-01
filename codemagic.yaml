@@ -14,6 +14,5 @@ workflows:
           flutter build ios --release --no-codesign
 
     artifacts:
-      paths:
-        - build/ios/ipa/*.ipa
-        - build/ios/ipa/*.dSYM.zip
+      - build/ios/ipa/*.ipa
+      - build/ios/ipa/*.dSYM.zip
