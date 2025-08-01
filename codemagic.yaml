@@ -5,18 +5,10 @@ workflows:
       groups:
         - ios_signing
 
-    certificates:
-      - certificate: $P12_BASE64
-        password: $CERTIFICATE_PASSWORD
-
-    provisioning_profiles:
-      - $PROVISIONING_PROFILE_BASE64
-
     scripts:
       - name: Get dependencies
         script: |
           flutter pub get
-
       - name: Build iOS
         script: |
           flutter build ios --release --no-codesign
@@ -24,3 +16,11 @@ workflows:
     artifacts:
       - build/ios/ipa/*.ipa
       - build/ios/ipa/*.dSYM.zip
+
+    publishing:
+      ios:
+        credentials:
+          certificate: $P12_BASE64
+          password: $CERTIFICATE_PASSWORD
+          profiles:
+            - $PROVISIONING_PROFILE_BASE64
