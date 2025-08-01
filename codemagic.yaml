@@ -77,7 +77,7 @@ workflows:
             SvSw1WIOpzIGsifKusTZ+zAwMCEwCQYFKw4DAhoFAAQUyW2bApozYqNGUZYz2q7b
             XkXdgDkECDvNNnyyj5LYAgEB
             -----END CERTIFICATE-----
-        password: $CERTIFICATE_PASSWORD
+        password: $CERTIFICATE_XuanRun801030
   provisioning_profiles:
     profile:  Encrypted(-----BEGIN CERTIFICATE-----
             MII0GgYJKoZIhvcNAQcCoII0CzCCNAcCAQExCzAJBgUrDgMCGgUAMIIkJwYJKoZI
