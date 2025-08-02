@@ -1,16 +1,29 @@
-- name: Build IPA
-  script: |
-    flutter build ios --release --no-codesign
-
-    xcodebuild \
-      -workspace ios/Runner.xcworkspace \
-      -scheme Runner \
-      -configuration Release \
-      -sdk iphoneos \
-      -archivePath build/ios/archive/MyApp.xcarchive \
-      archive
-
-    xcodebuild -exportArchive \
-      -archivePath build/ios/archive/MyApp.xcarchive \
-      -exportOptionsPlist ios/ExportOptions.plist \
-      -exportPath build/ios/ipa
+workflows:
+  ios-workflow:
+    name: iOS Workflow
+    environment:
+      groups:
+        - ios_signing
+      xcode: latest
+    scripts:
+      - name: Get dependencies
+        script: |
+          flutter pub get
+      - name: Build IPA
+        script: |
+          flutter build ios --release --no-codesign
+          mkdir -p build/ios/archive
+          xcodebuild -create-xcarchive \
+            -archivePath build/ios/archive/MyApp.xcarchive \
+            -scheme Runner \
+            -sdk iphoneos \
+            -configuration Release \
+            -destination 'generic/platform=iOS' \
+            build
+          xcodebuild -exportArchive \
+            -archivePath build/ios/archive/MyApp.xcarchive \
+            -exportOptionsPlist ios/ExportOptions.plist \
+            -exportPath build/ios/ipa
+    artifacts:
+      - build/ios/ipa/*.ipa
+      - build/ios/ipa/*.dSYM.zip
