@@ -4,17 +4,15 @@ workflows:
     environment:
       groups:
         - ios_signing
+      xcode: latest
     scripts:
       - name: Get dependencies
         script: |
           flutter pub get
       - name: Build IPA
         script: |
-          flutter build ipa --release --no-codesign
-      - name: Debug IPA output
-        script: |
-          echo "📦 Check build/ios/ipa directory:"
-          ls -al build/ios/ipa
+          flutter build ipa --release --export-options-plist=ios/ExportOptions.plist
     artifacts:
       - build/ios/ipa/*.ipa
       - build/ios/ipa/*.dSYM.zip
+
