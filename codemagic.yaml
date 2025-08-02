@@ -11,6 +11,10 @@ workflows:
       - name: Build IPA
         script: |
           flutter build ipa --release --no-codesign
+      - name: Debug IPA output
+        script: |
+          echo "📦 Check build/ios/ipa directory:"
+          ls -al build/ios/ipa
     artifacts:
       - build/ios/ipa/*.ipa
       - build/ios/ipa/*.dSYM.zip
