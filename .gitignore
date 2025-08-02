@@ -1,46 +1,37 @@
-# Dart/Pub related
+# Flutter
 .dart_tool/
 .packages
+.pub-cache/
 build/
-.pub/
-.flutter-plugins
-.flutter-plugins-dependencies
-.melos_tool/
-melos_workspace/
-
-# IntelliJ related
-*.iml
 .idea/
-
-# VS Code related
 .vscode/
+android/.gradle/
+android/app/key.properties
 
 # iOS
-ios/Flutter/Generated.xcconfig
-ios/Runner.xcworkspace/
 ios/Pods/
 ios/.symlinks/
-ios/Flutter/App.framework
 ios/Flutter/Flutter.framework
-ios/Flutter/flutter.podspec
-ios/Flutter/GeneratedPluginRegistrant.*
-ios/Flutter/ephemeral/
-*.xcworkspace
+ios/Flutter/Flutter.podspec
+ios/Flutter/App.framework
+ios/Flutter/Generated.xcconfig
 
-# Android
-android/.gradle/
-android/.idea/
-android/local.properties
-android/*.iml
-.android/
-.gradle/
+# macOS
+macos/Flutter/GeneratedPluginRegistrant.swift
 
-# Xcode
-*.xcuserstate
-*.xcodeproj/
-
-# Others
-.DS_Store
+# Other
+*.iml
+*.ipr
+*.iws
 *.log
-*.tmp
 *.lock
+*.tmp
+*.temp
+*.DS_Store
+
+# Windows/Linux user paths
+*.apk
+*.ipa
+*.keystore
+AppData/
+.android/
