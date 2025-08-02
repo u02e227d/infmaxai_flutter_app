@@ -2,6 +2,8 @@ name: infmaxai_flutter_app
 description: A modified Flutter app for PDF annotation and drawing.
 publish_to: 'none'
 
+version: 1.0.0+1
+
 environment:
   sdk: '^3.4.0'
 
