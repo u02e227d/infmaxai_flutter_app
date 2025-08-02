@@ -6,12 +6,12 @@ workflows:
         - ios_signing
       xcode: latest
     scripts:
-      - name: Get dependencies
+      - name: Install dependencies
         script: |
           flutter pub get
       - name: Build IPA
         script: |
-          flutter build ipa --release --no-codesign
+          flutter build ipa --release --export-options-plist=ios/ExportOptions.plist
     artifacts:
       - build/ios/ipa/*.ipa
       - build/ios/ipa/*.dSYM.zip
