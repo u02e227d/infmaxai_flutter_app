@@ -1,37 +1,28 @@
-# Flutter
+# Flutter & Dart
 .dart_tool/
 .packages
-.pub-cache/
 build/
-.idea/
-.vscode/
+.pub-cache/
+.flutter-plugins
+.flutter-plugins-dependencies
+
+# Android
 android/.gradle/
-android/app/key.properties
+android/captures/
 
 # iOS
 ios/Pods/
 ios/.symlinks/
-ios/Flutter/Flutter.framework
-ios/Flutter/Flutter.podspec
-ios/Flutter/App.framework
-ios/Flutter/Generated.xcconfig
+ios/Flutter/
 
-# macOS
-macos/Flutter/GeneratedPluginRegistrant.swift
+# IDE
+.vscode/
+.idea/
 
-# Other
-*.iml
-*.ipr
-*.iws
+# System
+.DS_Store
 *.log
-*.lock
 *.tmp
-*.temp
-*.DS_Store
-
-# Windows/Linux user paths
-*.apk
-*.ipa
-*.keystore
-AppData/
-.android/
+*.lock
+*.p12
+*.mobileprovision
