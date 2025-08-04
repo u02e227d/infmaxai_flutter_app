@@ -3,20 +3,22 @@ workflows:
     name: iOS Workflow
     environment:
       groups:
-        - ios_signing  
+        - ios_signing
       xcode: latest
       vars:
         BUNDLE_ID: "com.infmaxai.flutterapp"
-        APP_STORE_CONNECT_ISSUER_ID: $APP_STORE_CONNECT_ISSUER_ID
-        APP_STORE_CONNECT_KEY_IDENTIFIER: $APP_STORE_CONNECT_KEY_IDENTIFIER
-        APP_STORE_CONNECT_PRIVATE_KEY: $APP_STORE_CONNECT_PRIVATE_KEY
+        APP_STORE_CONNECT_ISSUER_ID: Encrypted(...)
+        APP_STORE_CONNECT_KEY_IDENTIFIER: Encrypted(...)
+        APP_STORE_CONNECT_PRIVATE_KEY: Encrypted(...)
     scripts:
       - name: Install dependencies
         script: |
           flutter pub get
+
       - name: Build IPA
         script: |
           flutter build ios --release --no-codesign
+
       - name: Code signing and export IPA
         script: |
           mkdir -p ~/certs
@@ -26,6 +28,7 @@ workflows:
 
           keychain_path="$HOME/Library/Keychains/login.keychain-db"
           security unlock-keychain -p "$KEYCHAIN_PASSWORD" "$keychain_path"
+
           security import ~/certs/cert.p12 -k "$keychain_path" -P "$CERTIFICATE_PASSWORD" -T /usr/bin/codesign
 
           mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
@@ -35,5 +38,6 @@ workflows:
             -archivePath build/ios/archive/Runner.xcarchive \
             -exportOptionsPlist ios/ExportOptions.plist \
             -exportPath build/ios/ipa
+
     artifacts:
       - build/ios/ipa/*.ipa
