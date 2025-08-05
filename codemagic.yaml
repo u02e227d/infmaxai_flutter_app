@@ -3,7 +3,7 @@ workflows:
     name: iOS Workflow
     environment:
       groups:
-        - ios_signing
+        - ios_signing777
       xcode: latest
       vars:
         BUNDLE_ID: "com.infmaxai.flutterapp"
@@ -22,22 +22,16 @@ workflows:
       - name: Code signing and export IPA
         script: |
           mkdir -p ~/certs
-
+          
           echo $CERTIFICATE_BASE64 | base64 --decode > ~/certs/cert.p12
           echo $PROVISIONING_PROFILE_BASE64 | base64 --decode > ~/certs/profile.mobileprovision
-
+          
           keychain_path="$HOME/Library/Keychains/login.keychain-db"
           security unlock-keychain -p "$KEYCHAIN_PASSWORD" "$keychain_path"
-
+          
           security import ~/certs/cert.p12 -k "$keychain_path" -P "$CERTIFICATE_PASSWORD" -T /usr/bin/codesign
-
           mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
           cp ~/certs/profile.mobileprovision ~/Library/MobileDevice/Provisioning\ Profiles/
-
-          xcodebuild -exportArchive \
-            -archivePath build/ios/archive/Runner.xcarchive \
-            -exportOptionsPlist ios/ExportOptions.plist \
-            -exportPath build/ios/ipa
 
     artifacts:
       - build/ios/ipa/*.ipa
